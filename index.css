@@ -61,3 +61,21 @@
     height: 400px;
     background-color: #f0f0f0;
 }
+
+.login-btn {
+    width: 80px;
+    cursor: pointer;
+}
+
+.search-div {
+    margin: 12px;
+}
+
+.search-text {
+    margin: 5px;
+}
+
+.link-res {
+    text-decoration: none;
+    color: black
+}
