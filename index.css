@@ -79,3 +79,8 @@
     text-decoration: none;
     color: black
 }
+
+.user-card {
+    padding: 12px;
+    border: 1 solid black;
+}
