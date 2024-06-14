@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withNonVeg } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { RES_DATA_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ const Body = () => {
   const [filteredResList, setFilteredResList] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardNonVeg = withNonVeg(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -80,7 +82,12 @@ const Body = () => {
             key={restaurant?.info?.id}
             to={"/restaurant/" + restaurant?.info?.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {" "}
+            {restaurant?.info?.veg === undefined ? (
+              <RestaurantCardNonVeg resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

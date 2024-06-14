@@ -8,8 +8,8 @@ const Header = () => {
 
   return (
     <div className="header flex bg-pink-100 justify-between shadow-lg mb-4">
-      <div className="logo-container ">
-        <img className="logo w-52 p-4 m-4  " src={LOGO_URL}></img>
+      <div className="logo-container">
+        <img className="logo w-32 p-2" src={LOGO_URL}></img>
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4 ">
