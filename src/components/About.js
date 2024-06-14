@@ -1,5 +1,5 @@
-import User from "./User";
 import UserClass from "./UserClass";
+import userContext from "../utils/userContext";
 
 const About = () => {
   return (
@@ -15,6 +15,9 @@ const About = () => {
         location="Gandhinagar"
         contact="@ketanchopade"
       />
+      <userContext.Consumer>
+        {({ loggedInUser }) => <h1>{loggedInUser}</h1>}
+      </userContext.Consumer>
     </div>
   );
 };

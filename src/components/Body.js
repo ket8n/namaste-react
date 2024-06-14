@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import RestaurantCard, { withNonVeg } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { RES_DATA_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../utils/userContext";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const { loggedInUser, setUserName } = useContext(userContext);
 
   const RestaurantCardNonVeg = withNonVeg(RestaurantCard);
 
@@ -73,6 +76,11 @@ const Body = () => {
         >
           Top Rated Restaurant
         </button>
+        <input
+          className="border border-black mx-4 p-1"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        ></input>
       </div>
 
       <div className="res-container flex flex-wrap">
